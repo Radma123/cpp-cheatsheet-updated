@@ -69,7 +69,7 @@ enum weekend {SAT,SUN};     // weekend is a type with values SAT and SUN
 enum weekend day;           // day is a variable of type weekend
 enum weekend{SAT=0,SUN=1};  // Explicit representation as int
 enum {SAT,SUN} day;         // Anonymous enum
-enum class Color {Red,Blue};// Color is a strict type with values Red and Blue
+enum class Color {Red,Blue};// Color is a strict type with values Red and Blue  !!!!Prefered!!!!
 Color x = Color::Red;       // Assign Color x to red
 typedef String char*;       // String s; means char* s;
 const int c=3;              // Constants must be initialized, cannot assign to
@@ -398,14 +398,18 @@ if (f2) f2 << x;            // Write to file
 
 ```cpp
 #include <string>         // Include string (std namespace)
-string s1, s2="hello";    // Create strings
-s1.size(), s2.size();     // Number of characters: 0, 5
-s1 += s2 + ' ' + "world"; // Concatenation
-s1 == "hello world"       // Comparison, also <, >, !=, etc.
-s1[0];                    // 'h'
-s1.substr(m, n);          // Substring of size n starting at s1[m]
-s1.c_str();               // Convert to const char*
-s1 = to_string(12.05);    // Converts number to string
+string s="hello";        // Create string
+s.starts_with("hello")    //  true/false
+s.ends_with("bye")        //  true/false
+s.insert(0, "111");      //  111hello
+s.replace(0,0,"AAA");     // AAAhello
+s.find('#')               //find the first position of '#' symbol
+s.erase(m, n);           // Same as 'substr', but this delete           
+s.size()    // Number of characters
+s[0];                    // 'h'
+s.substr(m, n);          // Substring of size n starting at s1[m]
+s.c_str();               // Convert to const char*
+1 = to_string(12.05);    // Converts number to string
 getline(cin, s);          // Read line ending in '\n'
 ```
 
@@ -413,8 +417,14 @@ getline(cin, s);          // Read line ending in '\n'
 
 ```cpp
 #include <vector>         // Include vector (std namespace)
+#include <algorithm>      // Include algorithms
+std::sort(a.begin(), a.end());  //sort the Vector
 vector<int> a(10);        // a[0]..a[9] are int (default size is 0)
 vector<int> b{1,2,3};        // Create vector with values 1,2,3
+a.capacity()                  // Current Vector memory allocation
+a.reserve()                  // Allocate some memory for Vector
+a.resize()                  // Resize Vector element count (this deletes the last elements or adds '0' to end)
+a.empty()                  // True if Vector is empty
 a.size();                 // Number of elements (10)
 a.push_back(3);           // Increase size to 11, a[10]=3
 a.back()=4;               // a[10]=4;
@@ -459,6 +469,22 @@ a["hello"] = 3;           // Add or replace element a["hello"]
 for (auto& p:a)
     cout << p.first << p.second;  // Prints hello, 3
 a.size();                 // 1
+```
+
+## `tuple` (It is an immutable ordered collection of elements of different types. It is useful when you need to group multiple values without creating a structure or class.)
+
+```cpp
+#include <tuple>
+#include <iostream>
+
+std::tuple<int, double, std::string> getData() {
+    return {42, 3.14, "Hello"};
+}
+
+int main() {
+    auto [a, b, c] = getData();                        // Structured binding (C++17+)
+    std::cout << a << " " << b << " " << c << "\n";
+}
 ```
 
 ## `unordered_map` (associative array - usually implemented as hash table - avg. time complexity: O(1))
