@@ -127,6 +127,7 @@ catch (...) { c; }          // If a throws something else, jump here
 ## Functions
 
 ```cpp
+[external args](args){function}(call) //lambda function. ( [=] - all external args. [&] - all external args reference. )
 int f(int x, int y);        // f is a function taking 2 ints and returning int
 void f();                   // f is a procedure taking no arguments
 void f(int a=0);            // f() is equivalent to f(0)
@@ -393,13 +394,14 @@ if (f2) f2 << x;            // Write to file
 ```cpp
 #include <string>         // Include string (std namespace)
 string s="hello";        // Create string
-s.starts_with("hello")    //  true/false
+s.starts_with("hello")    //  true/falseа
 s.ends_with("bye")        //  true/false
 s.insert(0, "111");      //  111hello
 s.replace(0,0,"AAA");     // AAAhello
 s.find('#')               //find the first position of '#' symbol
 s.erase(m, n);           // Same as 'substr', but this delete           
-s.size()    // Number of characters
+s.size()                  // Number of characters
+s.resize(n, '@')         // 'n' chars '@' in string
 s[0];                    // 'h'
 s.substr(m, n);          // Substring of size n starting at s1[m]
 s.c_str();               // Convert to const char*
