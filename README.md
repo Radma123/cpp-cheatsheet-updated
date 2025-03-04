@@ -280,13 +280,14 @@ destructors do not inherit.
 ## Templates
 
 ```cpp
-template <class T> T f(T t);// Overload f for all types
-template <class T> class X {// Class with type parameter T
+
+template <typename T> T f(T t);// Overload f for all types
+template <typename T> class X {// Class with type parameter T
   X(T t); };                // A constructor
-template <class T> X<T>::X(T t) {}
+template <typename T> X<T>::X(T t) {}
                             // Definition of constructor
 X<int> x(3);                // An object of type "X of int"
-template <class T, class U=T, int n=0>
+template <typename T, typename U=T, int n=0>
                             // Template with default parameters
 ```
 
