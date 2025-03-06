@@ -516,6 +516,8 @@ s.insert(123);            // Add element to set
 if (s.find(123) != s.end()) // Search for an element
     s.erase(123);
 cout << s.size();         // Number of elements in set
+s.contains(word)          // true/false
+auto [iter, has_been_inserted] = words.insert(word);      //    iter and true/false
 ```
 
 ## `unordered_set` (store unique elements - usually implemented as a hash set - avg. time complexity: O(1))
@@ -527,6 +529,8 @@ s.insert(123);            // Add element to set
 if (s.find(123) != s.end()) // Search for an element
     s.erase(123);
 cout << s.size();         // Number of elements in set
+s.contains(word)          // true/false
+auto [iter, has_been_inserted] = words.insert(word);      //    iter and true/false
 ```
 
 ## `algorithm` (A collection of 60 algorithms on sequences with iterators)
