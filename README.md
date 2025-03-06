@@ -390,6 +390,10 @@ ofstream f2("filename");    // Open file for writing
 if (f2) f2 << x;            // Write to file
 ```
 
+## containers diff-s vizualization
+![image](https://github.com/user-attachments/assets/f64d93c9-b2f2-4035-b709-e5382fd12541)
+
+
 ## `string` (Variable sized character array)
 
 ```cpp
@@ -436,6 +440,14 @@ for (vector<int>::iterator p=a.begin(); p!=a.end(); ++p)
 vector<int> b(a.begin(), a.end());  // b is copy of a
 vector<T> c(n, x);        // c[0]..c[n-1] init to x
 T d[10]; vector<T> e(d, d+10);      // e is initialized from d
+```
+
+## `list` (Array placed chaotically in stack)
+```cpp
+#include <list>
+std::list<int> l = {0, 10, 15, 20};    //common list
+auto iter = std::next(l.begin());      //iterator on the next element
+std::advance(iter, 2);                 //iterator advance (in this case on last element)
 ```
 
 ## `deque` (Array stack queue)
