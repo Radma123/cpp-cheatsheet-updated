@@ -392,6 +392,8 @@ if (f2) f2 << x;            // Write to file
 
 ## containers diff-s vizualization
 ![image](https://github.com/user-attachments/assets/f64d93c9-b2f2-4035-b709-e5382fd12541)
+![image](https://github.com/user-attachments/assets/ebcbeb9c-cf10-4b3d-9614-632dff06ea27)
+
 
 
 ## `string` (Variable sized character array)
