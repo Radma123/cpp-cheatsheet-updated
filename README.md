@@ -393,6 +393,17 @@ if (f2) f2 << x;            // Write to file
 ## containers diff-s vizualization
 ![image](https://github.com/user-attachments/assets/f64d93c9-b2f2-4035-b709-e5382fd12541)
 ![image](https://github.com/user-attachments/assets/ebcbeb9c-cf10-4b3d-9614-632dff06ea27)
+![image](https://github.com/user-attachments/assets/a36c5f85-6b7e-4487-bb61-ab42041c057f)
+
+## adapaters diff-s vizualization
+std::stack (#include <stack>)
+![image](https://github.com/user-attachments/assets/968ef876-0973-4bd8-b8a1-637b8b087949)
+std::queue (#include <queue>)
+![image](https://github.com/user-attachments/assets/06eb0eae-7887-439b-a631-66394c455ebe)
+std::priority_queue (#include <queue>)      //auto sorter container
+![image](https://github.com/user-attachments/assets/dad6efdc-6e33-4891-825c-7dfd80382f2c)
+std::string_view (#include <string_view>)   //substr, but if you don't want to edit String
+![image](https://github.com/user-attachments/assets/2c5c3c53-0033-42f0-9aa5-f21d207f2b88)
 
 
 
@@ -544,6 +555,31 @@ swap(x, y);               // Exchange values of variables x and y
 sort(a, a+n);             // Sort array a[0]..a[n-1] by <
 sort(a.begin(), a.end()); // Sort vector or deque
 reverse(a.begin(), a.end()); // Reverse vector or deque
+
+std::merge(first1, last1, first2, last2, d_first);  
+// Merges two sorted ranges [first1, last1) and [first2, last2) into a sorted range starting at d_first.
+std::set_union(first1, last1, first2, last2, d_first);  
+// Computes the union of two sorted sets, storing the result in d_first. 
+// The output contains all unique elements from both sets.
+std::set_intersection(first1, last1, first2, last2, d_first);  
+// Computes the intersection of two sorted sets and stores the common elements in d_first.
+std::set_difference(first1, last1, first2, last2, d_first);  
+// Computes the difference of two sorted sets (elements in the first set but not in the second) and stores them in d_first.
+std::set_symmetric_difference(first1, last1, first2, last2, d_first);  
+// Computes the symmetric difference of two sorted s
+
+std::vector<int> data = {100, 42, 17, 80, 20, 0};
+std::partial_sort(data.begin(), data.begin() + 3, data.end());     // 0 17 20 (partial sort)
+std::count(v.begin(), v.end(), 20);       // 1
+std::count_if(                            // "count" with condition
+        data.begin(),
+        data.end(),
+        [](int c) {
+            return 0 <= c && c <= 20;
+        }
+    )                                     // 2
+std::ranges::sort(data);                  // 0, 17, 20, 42, 80, 100 ( "constrained" sort(c++20) )
+
 ```
 
 ## `chrono` (Time related library)
