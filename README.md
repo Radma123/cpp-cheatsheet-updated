@@ -402,7 +402,7 @@ std::queue (#include <queue>)
 ![image](https://github.com/user-attachments/assets/06eb0eae-7887-439b-a631-66394c455ebe)
 std::priority_queue (#include <queue>)      //auto sorter container
 ![image](https://github.com/user-attachments/assets/dad6efdc-6e33-4891-825c-7dfd80382f2c)
-std::string_view (#include <string_view>)   //substr, but if you don't want to edit String
+std::string_view (#include <string_view>)   //substr, but if you don't want to edit string
 ![image](https://github.com/user-attachments/assets/2c5c3c53-0033-42f0-9aa5-f21d207f2b88)
 
 
